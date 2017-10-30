@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>To do list</title>
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="statusbar-overlay"></div>
+
+<div class="panel-overlay"></div>
+
+<div class="views">
+
+    <div class="view view-main">
+        <div class="navbar">
+
+            <div class="navbar-inner" data-page="index"> <!--Навбар первой страницы-->
+                <div class="left sliding">
+                </div>
+                <div class="center sliding">TODO List</div>
+                <div class="right sliding createTaskBtn">
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pages navbar-through">
+
+            <div data-page="index" class="page">      <!-- главная страница -->
+                <div class="page-content" id="indexContainer">
+                    <label class="filterLabel" for="priorityFilter">Фильтер по приоритету:
+                        <select id="priorityFilter">
+                            <option>Нет Фильтра</option>
+                            <option>Высокий</option>
+                            <option>Средний</option>
+                            <option>Низкий</option>
+                        </select>
+                    </label>
+
+                    <ul type="none" id="tasksList">
+                    </ul>
+                </div>
+
+                <!-- попан создания и редактирования задач -->
+                <div class="popup popup-create">
+                    <div class="content-block">
+                        <div class="closePopupBtn"></div>
+                        <div class="title">Создать задачу</div>
+                        <label for="titleInput">Введите заголовок задачи
+                            <input type="text" placeholder="Заголовок" id="titleInput" maxlength="23">
+                        </label>
+                        <label for="descriptionInput">Введите описание задачи
+                            <textarea placeholder="Описание" id="descriptionInput" maxlength="100"></textarea>
+                        </label>
+                        <label class="dateLabel date" for="calendarInput">Введите дату
+                            <input id="calendarInput" placeholder="01.01.18" readonly>
+                        </label>
+                        <label class="dateLabel time" for="timeInput">Введите время
+                            <input id="timeInput" placeholder="12:00" readonly>
+                        </label>
+                        <div class="pickerContainer">
+                            <div id="datePickerContainer"></div>
+                            <div class="confirmBtn"></div>
+                        </div>
+                        <label class="priorityLabel withPriorityAfter" for="priorityInput">Выберите приоритет задачи
+                            <input placeholder="Приоритет" id="priorityInput" maxlength="100" readonly>
+                            <div></div>
+                        </label>
+                        <label class="checkboxLabel" for="doneCheckbox">
+                            <input type="checkbox" id="doneCheckbox">
+                            Задача сделана <span></span>
+                        </label>
+
+                        <div class="saveBtn"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
